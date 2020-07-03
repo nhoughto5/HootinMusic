@@ -58,7 +58,7 @@ a.link-no-style {
     margin-top: -60px;
     height: 60px;
     clear: both;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.75);
     color: white;
     justify-content: center;
     width: 100%;
@@ -76,5 +76,11 @@ a.link-no-style {
         }
       }
     }
+  }
+}
+html:not([data-scroll="0"]) {
+  footer {
+    //background-color: red;
+    background-color: rgba(0, 0, 0, 0.2);
   }
 }

@@ -4,7 +4,6 @@ import { Image, Nav, Navbar } from "react-bootstrap";
 import Owl2 from "../images/hootinOwl2.png";
 
 const CustomNavbar = ({ pageInfo }) => {
-  console.log(pageInfo);
   return (
     <Navbar variant="dark" expand="lg" id="site-navbar">
       <Link to="/" className="link-no-style navTitle">
