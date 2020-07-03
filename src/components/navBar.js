@@ -8,7 +8,7 @@ const CustomNavbar = ({ pageInfo }) => {
     <>
       <Navbar variant="dark" expand="lg" id="site-navbar">
         {/* <Container> */}
-        <Link to="/" className="link-no-style">
+        <Link to="/" className="link-no-style navTitle">
           <Navbar.Brand as="span">Hootin Music</Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
