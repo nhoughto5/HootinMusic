@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
-import { Button, Form, FormControl, Nav, Navbar } from "react-bootstrap"
+import { Form, Nav, Navbar } from "react-bootstrap"
 
 const CustomNavbar = ({ pageInfo }) => {
   console.log(pageInfo)
@@ -14,22 +14,28 @@ const CustomNavbar = ({ pageInfo }) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto" activeKey={pageInfo && pageInfo.pageName}>
-            <Link to="/page-2" className="link-no-style">
-              <Nav.Link as="span" eventKey="page-2">
-                Page 2
+            <Link to="/music" className="link-no-style">
+              <Nav.Link as="span" eventKey="music">
+                Music
+              </Nav.Link>
+            </Link>
+
+            <Link to="/videos" className="link-no-style">
+              <Nav.Link as="span" eventKey="videos">
+                Video
               </Nav.Link>
             </Link>
           </Nav>
           <Nav className="ml-auto">
             <Form inline onSubmit={e => e.preventDefault()}>
-              <Form.Group>
+              {/* <Form.Group>
                 <FormControl
                   type="text"
                   placeholder="Fake Search"
                   className="mr-2"
                 />
               </Form.Group>
-              <Button>Fake Button</Button>
+              <Button>Fake Button</Button> */}
             </Form>
           </Nav>
         </Navbar.Collapse>

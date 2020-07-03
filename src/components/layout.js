@@ -5,10 +5,13 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import { graphql, StaticQuery } from "gatsby"
-import React from "react"
-import { Container, Image } from "react-bootstrap"
-import Owl from "../images/hootinOwl2Trans.png"
+import { faFacebook, faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { graphql, Link, StaticQuery } from "gatsby";
+import React from "react";
+import { Col, Container, Image, Row } from "react-bootstrap";
+import Owl from "../images/hootinOwl2Trans.png";
+import Navbar from "./navBar";
 
 const Layout = ({ children, pageInfo }) => (
   <StaticQuery
@@ -25,7 +28,7 @@ const Layout = ({ children, pageInfo }) => (
       <>
         <Container fluid className="px-0 main">
           <Image src={Owl} className="bgImage"></Image>
-          {/* <Navbar pageInfo={pageInfo} />
+          <Navbar pageInfo={pageInfo} />
           <Row noGutters>
             <Col>
               <Container className="mt-5">
@@ -39,17 +42,23 @@ const Layout = ({ children, pageInfo }) => (
             <Col className="footer-col">
               <footer>
                 <span>
-                  © {new Date().getFullYear()}, Built with
-                  {` `}
-                  <a href="https://www.gatsbyjs.org">Gatsby</a>
+                  <Link to="https://twitter.com/hootinm" className="link-no-style">
+                    <FontAwesomeIcon icon={faTwitter} size="2x" className="icon" />
+                  </Link>
+                  <Link to="https://www.facebook.com/hootinMusic" className="link-no-style">
+                    <FontAwesomeIcon icon={faFacebook} size="2x" className="icon" />
+                  </Link>
+                  <Link to="https://www.instagram.com/hootinmusic/" className="link-no-style">
+                    <FontAwesomeIcon icon={faInstagram} size="2x" className="icon" />
+                  </Link>
                 </span>
               </footer>
             </Col>
-          </Row> */}
+          </Row>
         </Container>
       </>
     )}
   />
-)
+);
 
-export default Layout
+export default Layout;

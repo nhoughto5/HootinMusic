@@ -1,14 +1,12 @@
+body {
+  background-color: $color-black;
+}
+
 div.main {
   min-height: 100vh;
   padding-bottom: 60px;
-  background-color: black;
-  // height: 100%;
-  .bgImage {
-    // height: 100vh;
 
-    // background-position: center;
-    // background-repeat: no-repeat;
-    // background-size: cover;
+  .bgImage {
     /* Set rules to fill background */
     opacity: 0.35;
     min-height: 100%;
@@ -48,6 +46,11 @@ a.link-no-style {
   flex-direction: column;
   align-content: center;
   align-items: center;
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
   footer {
     display: flex;
     position: relative;
@@ -55,7 +58,7 @@ a.link-no-style {
     margin-top: -60px;
     height: 60px;
     clear: both;
-    background-color: $color-primary;
+    background-color: rgba(0, 0, 0, 0.2);
     color: white;
     justify-content: center;
     width: 100%;
@@ -63,6 +66,15 @@ a.link-no-style {
     span {
       align-self: center;
       text-align: center;
+
+      .icon {
+        margin: 30px;
+        color: $color-primary;
+        &:hover {
+          color: $color-secondary;
+          transform: scale(1.2);
+        }
+      }
     }
   }
 }
