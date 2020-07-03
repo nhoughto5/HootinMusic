@@ -1,6 +1,6 @@
 import { Link } from "gatsby";
 import React from "react";
-import { Col, Image, Nav, Navbar, Row } from "react-bootstrap";
+import { Image, Nav, Navbar } from "react-bootstrap";
 import Owl2 from "../images/hootinOwl2.png";
 
 const CustomNavbar = ({ pageInfo }) => {
@@ -8,16 +8,13 @@ const CustomNavbar = ({ pageInfo }) => {
   return (
     <Navbar variant="dark" expand="lg" id="site-navbar">
       <Link to="/" className="link-no-style navTitle">
-        <Row>
-          <Col>
-            <div className="circleBg">
-              <Image src={Owl2} className="navImage"></Image>
-            </div>
-          </Col>
-          <Col>
-            <Navbar.Brand as="span">Hootin Music</Navbar.Brand>
-          </Col>
-        </Row>
+        <Navbar.Brand>
+          <div className="circleBg">
+            <Image src={Owl2} className="navImage"></Image>
+          </div>
+        </Navbar.Brand>
+
+        <Navbar.Brand as="span">Hootin Music</Navbar.Brand>
       </Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
