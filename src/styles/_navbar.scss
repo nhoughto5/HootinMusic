@@ -1,8 +1,31 @@
 #site-navbar {
   background-color: $color-black;
-  //background-color: rgba(0, 0, 0, 0);
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
+}
+
+.linkStyle:hover {
+  text-decoration: underline;
+  text-decoration-color: $color-primary;
+}
+
+.navHome {
+  float: left;
+}
+
+.circleBg {
+  background-color: white;
+  line-height: 70px;
+  text-align: center;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  .navImage {
+    transform: scale(1.4);
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+  }
 }

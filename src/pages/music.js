@@ -1,4 +1,3 @@
-import { Link } from "gatsby";
 import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -6,8 +5,9 @@ import SEO from "../components/seo";
 const MusicPage = () => (
   <Layout pageInfo={{ pageName: "music" }}>
     <SEO title="Music" />
-    <h1>Hi from the music page</h1>
+
     <div className="paragraphContent">
+      <h1>Music</h1>
       <p>
         Lorizzle crazy away sit amizzle, break yo neck, yall adipiscing funky fresh. Nullizzle doggy velizzle, i'm in
         the shizzle gizzle, suscipit i'm in the shizzle, gravida pizzle, arcu. Pellentesque shizzle my nizzle
@@ -102,7 +102,6 @@ const MusicPage = () => (
         yall tellus sizzle boom shackalack bow wow wow. Pimpin' tempizzle fo shizzle felis.
       </p>
     </div>
-    <Link to="/">Go back to the homepage</Link>
   </Layout>
 );
 
