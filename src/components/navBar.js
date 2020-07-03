@@ -1,7 +1,6 @@
-import React from "react"
 import { Link } from "gatsby"
-
-import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap"
+import React from "react"
+import { Button, Form, FormControl, Nav, Navbar } from "react-bootstrap"
 
 const CustomNavbar = ({ pageInfo }) => {
   console.log(pageInfo)
@@ -10,7 +9,7 @@ const CustomNavbar = ({ pageInfo }) => {
       <Navbar variant="dark" expand="lg" id="site-navbar">
         {/* <Container> */}
         <Link to="/" className="link-no-style">
-          <Navbar.Brand as="span">Gatsby React Bootstrap</Navbar.Brand>
+          <Navbar.Brand as="span">Hootin Music</Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

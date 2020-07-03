@@ -1,11 +1,12 @@
 module.exports = {
   pathPrefix: "/gatsby-react-bootstrap-starter",
   siteMetadata: {
-    title: `Gatsby React Bootstrap Starter`,
-    description: `A starter that includes react-bootstrap and react-icons, along with SASS compilation.`,
-    author: `Billy Jacoby`,
+    title: `Hootin Music`,
+    description: `Music, that's it`,
+    author: `Nick Houghton`,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

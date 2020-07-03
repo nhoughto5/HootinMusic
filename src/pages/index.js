@@ -1,6 +1,5 @@
 import React from "react"
-import { Row, Col, Container, ListGroup } from "react-bootstrap"
-
+import { Col, Container, ListGroup, Row } from "react-bootstrap"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
