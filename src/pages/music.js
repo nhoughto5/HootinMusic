@@ -1,51 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 const MusicPage = () => {
-  // The debounce function receives our function as a parameter
-  const debounce = fn => {
-    // This holds the requestAnimationFrame reference, so we can cancel it if we wish
-    let frame;
-
-    // The debounce function returns a new function that can receive a variable number of arguments
-    return (...params) => {
-      // If the frame variable has been defined, clear it now, and queue for next frame
-      if (frame) {
-        cancelAnimationFrame(frame);
-      }
-
-      // Queue our function call for the next frame
-      frame = requestAnimationFrame(() => {
-        // Call our function and pass any params we received
-        fn(...params);
-      });
-    };
-  };
-
-  const storeScroll = () => {
-    // console.log(window);
-    // console.log(
-    //   "WHAT IS IT: " + (window.innerHeight + window.scrollY) + ", height: " + document.documentElement.offsetHeight
-    // );
-    document.documentElement.dataset.scroll = window.scrollY;
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-      document.documentElement.dataset.scroll = 1;
-      console.log("Hit");
-    } else {
-      document.documentElement.dataset.scroll = 0;
-      console.log("Nay");
-    }
-  };
-
-  useEffect(() => {
-    // Listen for new scroll events, here we debounce our `storeScroll` function
-    document.addEventListener("scroll", debounce(storeScroll), { passive: true });
-
-    // Update scroll position for first time
-    storeScroll();
-  }, []);
-
   return (
     <Layout pageInfo={{ pageName: "music" }}>
       <SEO title="Music" />
