@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { graphql, Link, StaticQuery } from "gatsby";
 import React from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
-import Owl from "../images/hootinOwl2Trans.png";
+import Owl from "../images/hootinOwl2TransCrop.png";
 import Navbar from "./navBar";
 
 const Layout = ({ children, pageInfo }) => (
@@ -27,11 +27,11 @@ const Layout = ({ children, pageInfo }) => (
     render={data => (
       <>
         <Container fluid className="px-0 main">
-          <Image src={Owl} className="bgImage"></Image>
           <Navbar pageInfo={pageInfo} />
           <Row noGutters>
             <Col>
               <Container className="mt-5">
+                <Image src={Owl} className="bgImage"></Image>
                 <main>{children}</main>
               </Container>
             </Col>

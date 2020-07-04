@@ -12,7 +12,6 @@ const CustomNavbar = ({ pageInfo }) => {
             <Image src={Owl2} className="navImage"></Image>
           </div>
         </Navbar.Brand>
-
         <Navbar.Brand as="span">Hootin Music</Navbar.Brand>
       </Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -1,5 +1,7 @@
+const { Images } = require("react-bootstrap-icons");
+
 module.exports = {
-  pathPrefix: "/gatsby-react-bootstrap-starter",
+  pathPrefix: "/HootinMusic",
   siteMetadata: {
     title: `Hootin Music`,
     description: `Music, that's it`,
@@ -27,10 +29,11 @@ module.exports = {
         background_color: `#20232a`,
         theme_color: `#20232a`,
         display: `minimal-ui`,
+        icon: "src/images/hootinOwl2_icon.png",
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
