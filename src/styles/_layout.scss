@@ -78,9 +78,23 @@ a.link-no-style {
     }
   }
 }
+
 html:not([data-scroll="0"]) {
   footer {
     //background-color: red;
     background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.notFound {
+  width: 100%;
+  height: 100%;
+  align-content: center;
+  text-align: center;
+  background-color: $color-grey;
+  h1,
+  p {
+    color: white;
+    opacity: 1;
   }
 }
