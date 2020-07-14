@@ -1,7 +1,6 @@
 const { Images } = require("react-bootstrap-icons");
 
 module.exports = {
-  pathPrefix: "/HootinMusic",
   siteMetadata: {
     title: `Hootin Music`,
     description: `Music, that's it`,

@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-react-bootstrap",
+  "name": "hootinmusic",
   "private": true,
-  "description": "A starter that includes and configures react-bootstrap and react-icons, along with SASS handling. ",
+  "description": "Personal Website for Hootin",
   "version": "0.1.0",
-  "author": "Billy Jacoby <billyjacoby@gmail.com>",
+  "author": "Nick Houghton",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.29",
     "@fortawesome/free-brands-svg-icons": "^5.13.1",
@@ -11,7 +11,7 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "babel-plugin-styled-components": "^1.10.7",
     "bootstrap": "^4.3.1",
-    "gatsby": "^2.3.34",
+    "gatsby": "^2.24.2",
     "gatsby-image": "^2.0.41",
     "gatsby-plugin-manifest": "^2.0.29",
     "gatsby-plugin-offline": "^2.0.25",
@@ -50,10 +50,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://https://github.com/nhoughto5/HootinMusic/"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/nhoughto5/HootinMusic/issues"
   },
-  "homepage": "https://billyjacoby.github.io/gatsby-react-bootstrap-starter/"
+  "homepage": "hootinMusic.com"
 }
