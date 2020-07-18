@@ -58,6 +58,7 @@ function getVideos(data) {
         </Col>
       </Row>
     );
+    html.push(<hr></hr>);
   }
 
   // Add the last one if there are an odd number of videos

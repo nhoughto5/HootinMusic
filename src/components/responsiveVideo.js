@@ -4,6 +4,10 @@ import colors from "../styles/_variables.scss";
 
 const VideoTitle = styled.h1`
   color: ${colors.primary};
+  white-space: nowrap;
+  overflow: hidden;
+  text-size: 2.5vw;
+  text-overflow: ellipsis;
 `;
 
 const ResponsiveVideo = ({ videoInfo }) => {
