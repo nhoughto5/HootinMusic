@@ -1,0 +1,86 @@
+[
+  {
+    "name": "You Stingy",
+    "src": "https://www.youtube.com/embed/c7_1qTKzu9g",
+    "enabled": true,
+    "sortOrder": 1
+  },
+  {
+    "name": "Disappear",
+    "src": "https://www.youtube.com/embed/4d5qomRIg2Q",
+    "enabled": true,
+    "sortOrder": 2
+  },
+  {
+    "name": "The Will",
+    "src": "https://www.youtube.com/embed/H2XDo6r-mDI",
+    "enabled": true,
+    "sortOrder": 3
+  },
+  {
+    "name": "No Hands",
+    "src": "https://www.youtube.com/embed/afUQQkaTOp0",
+    "enabled": true,
+    "sortOrder": 4
+  },
+  {
+    "name": "Leaking Pen",
+    "src": "https://www.youtube.com/embed/fH0MdO-Mloc",
+    "enabled": true,
+    "sortOrder": 5
+  },
+  {
+    "name": "A Movement in Groovequility",
+    "src": "https://www.youtube.com/embed/bQ8jKMfNVII",
+    "enabled": true,
+    "sortOrder": 3
+  },
+  {
+    "name": "Old Horrors",
+    "src": "https://www.youtube.com/embed/VPGAkeI-4AE",
+    "enabled": true,
+    "sortOrder": 6
+  },
+  {
+    "name": "Clockwise",
+    "src": "https://www.youtube.com/embed/N22FOAcynv8",
+    "enabled": true,
+    "sortOrder": 7
+  },
+  {
+    "name": "Myself Over",
+    "src": "https://www.youtube.com/embed/Pd5BWq4yYh8",
+    "enabled": true,
+    "sortOrder": 4
+  },
+  {
+    "name": "I'm Heavy",
+    "src": "https://www.youtube.com/embed/-4xEVjTgvB0",
+    "enabled": true,
+    "sortOrder": 5
+  },
+  {
+    "name": "Bring You To The Edge",
+    "src": "https://www.youtube.com/embed/FnoBUkK60m4",
+    "enabled": true,
+    "sortOrder": 7
+  },
+  {
+    "name": "Be Nice To Yourself",
+    "src": "https://www.youtube.com/embed/sgi42U0U6e4",
+    "enabled": true,
+    "sortOrder": 7
+  },
+  {
+    "name": "747",
+    "src": "https://www.youtube.com/embed/hJUZNT_qWks",
+    "enabled": false,
+    "sortOrder": 4
+  },
+  {
+    "name": "The Man Who Brought Me",
+    "src": "https://www.youtube.com/embed/rEEQ06kjeDk",
+    "enabled": true,
+    "sortOrder": 5
+  }
+]

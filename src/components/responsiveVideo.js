@@ -14,10 +14,10 @@ const ResponsiveVideo = ({ videoInfo }) => {
         <iframe
           className="embed-responsive-item"
           src={videoInfo.src}
-          frameborder="0"
+          frameBorder="0"
           title={videoInfo.name}
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
     </div>
