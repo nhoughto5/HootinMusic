@@ -10,7 +10,6 @@ div.main {
     /* Set rules to fill background */
     opacity: 0.35;
     min-height: 55%;
-    min-width: 1024px;
 
     /* Set up proportionate scaling */
     width: 55%;
@@ -19,16 +18,27 @@ div.main {
     /* Set up positioning */
     position: fixed;
     margin-bottom: 0px;
+
+    display: block;
+    margin: 0 auto;
     // left: 0;
   }
 
-  @media screen and (max-width: 1024px) {
-    /* Specific to this particular image */
-    .bgImage {
-      left: 50%;
-      margin-left: -512px; /* 50% */
-    }
-  }
+  // @media screen and (max-width: 1024px) {
+  //   /* Specific to this particular image */
+  //   .bgImage {
+  //     left: 50%;
+  //     margin-left: -512px; /* 50% */
+  //   }
+  // }
+
+  // @media screen and (min-width: 1024px) {
+  //   /* Specific to this particular image */
+  //   .bgImage {
+  //     left: 50%;
+  //     margin-left: -512px; /* 50% */
+  //   }
+  // }
 }
 
 div.full-height {

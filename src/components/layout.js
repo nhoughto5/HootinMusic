@@ -28,10 +28,10 @@ const Layout = ({ children, pageInfo }) => (
       <>
         <Container fluid className="px-0 main">
           <Navbar pageInfo={pageInfo} />
+          <Image src={Owl} className="bgImage"></Image>
           <Row noGutters>
             <Col>
               <Container className="mt-5">
-                <Image src={Owl} className="bgImage"></Image>
                 <main>{children}</main>
               </Container>
             </Col>

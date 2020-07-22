@@ -62,7 +62,7 @@ function getVideos(data) {
   }
 
   // Add the last one if there are an odd number of videos
-  if (len % 2 == 1) {
+  if (len % 2 === 1) {
     html.push(
       <Row>
         <Col md={6}>
