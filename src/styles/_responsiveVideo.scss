@@ -1,0 +1,7 @@
+.videoTitle {
+  color: $color-primary;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 2vw;
+  text-overflow: ellipsis;
+}
