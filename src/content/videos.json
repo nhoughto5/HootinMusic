@@ -1,5 +1,11 @@
 [
   {
+    "name": "ALBUM TEASER: Wisdom",
+    "src": "https://www.youtube.com/embed/T6yKbUIV0ys",
+    "enabled": true,
+    "sortOrder": 0
+  },
+  {
     "name": "You Stingy",
     "src": "https://www.youtube.com/embed/-SnLjM4A0YM",
     "enabled": true,
