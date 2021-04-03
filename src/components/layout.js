@@ -31,7 +31,7 @@ const Layout = ({ children, pageInfo }) => (
           <Image src={Owl} className="bgImage"></Image>
           <Row noGutters>
             <Col>
-              <Container className="mt-5">
+              <Container style={{ marginBottom: "60px" }} className="mt-5">
                 <main>{children}</main>
               </Container>
             </Col>

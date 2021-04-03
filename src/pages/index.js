@@ -1,77 +1,42 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import ResponsiveVideo from "../components/responsiveVideo";
-import { StaticQuery, graphql } from "gatsby";
+import { Image } from "react-bootstrap";
+import albumArt from "../images/ExitConditions_Art.jpeg"
+import styled from "styled-components";
+
+const ImageWrapper = styled.div`
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+`;
 
 const IndexPage = () => (
-  <StaticQuery
-    query={graphql`
-      query VideosQuery {
-        allVideosJson {
-          edges {
-            node {
-              name
-              src
-              enabled
-              sortOrder
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <Layout pageInfo={{ pageName: "index" }}>
-          <SEO title="Home" keywords={[`gatsby`, `react`, `bootstrap`]} />
-          <Container fluid className="fadeIn2">
-            {getVideos(data)}
-          </Container>
-        </Layout>
-      </>
-    )}
-  />
+  <Layout pageInfo={{ pageName: "Home" }}>
+    <SEO title="Home" />
+
+    <h1>Upcoming Album: <i>Exit Conditions</i></h1>
+    <h2>Release Date: TBA</h2>
+
+    <ImageWrapper>
+      <Image src={albumArt}></Image>
+    </ImageWrapper>
+    <h4><i>Exit Conditions</i> is my upcoming album. It was recorded at home
+      in Vancouver B.C. with the help of a lot of friends, without whom I would be lost:
+    </h4>
+
+    <div className="listWrap">
+      <ul>
+        <li>Brin Porter</li>
+        <li>Kevin Brown</li>
+        <li>Martha Goddard</li>
+        <li>Ian Crowe</li>
+      </ul>
+    </div>
+
+  </Layout >
 );
-
-function getVideos(data) {
-  const html = [];
-
-  const videos = data.allVideosJson.edges.filter(item => {
-    return item.node.enabled;
-  });
-
-  videos.sort(function(a, b) {
-    return a.node.sortOrder - b.node.sortOrder;
-  });
-
-  const len = videos.length;
-
-  for (let i = 0; i < len - 1; i += 2) {
-    html.push(
-      <Row>
-        <Col md={6}>
-          <ResponsiveVideo videoInfo={videos[i].node}></ResponsiveVideo>
-        </Col>
-        <Col md={6}>
-          <ResponsiveVideo videoInfo={videos[i + 1].node}></ResponsiveVideo>
-        </Col>
-      </Row>
-    );
-    html.push(<hr></hr>);
-  }
-
-  // Add the last one if there are an odd number of videos
-  if (len % 2 === 1) {
-    html.push(
-      <Row>
-        <Col md={6}>
-          <ResponsiveVideo videoInfo={videos[len - 1].node}></ResponsiveVideo>
-        </Col>
-      </Row>
-    );
-  }
-  return html;
-}
 
 export default IndexPage;

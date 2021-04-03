@@ -10,11 +10,12 @@ const ResponsiveVideo = ({ videoInfo }) => {
           src={videoInfo.src}
           frameBorder="0"
           title={videoInfo.name}
+          style={{ marginTop: "5px" }}
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
       </div>
-    </div>
+    </div >
   );
 };
 
