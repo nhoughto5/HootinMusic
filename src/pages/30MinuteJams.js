@@ -4,9 +4,6 @@ import SEO from "../components/seo";
 import ResponsiveVideo from "../components/responsiveVideo";
 import { StaticQuery, graphql } from "gatsby";
 import { Col, Container, Row } from "react-bootstrap";
-import styled from "styled-components";
-
-
 
 const Jams = () => (
     <StaticQuery

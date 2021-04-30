@@ -7,6 +7,14 @@ module.exports = {
     author: `Nick Houghton`,
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /svg/
+        }
+      }
+    },
     "gatsby-transformer-json",
     {
       resolve: `gatsby-source-filesystem`,

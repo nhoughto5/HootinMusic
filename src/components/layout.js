@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import { faFacebook, faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faInstagram, faTiktok, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { graphql, Link, StaticQuery } from "gatsby";
 import React from "react";
@@ -42,14 +42,20 @@ const Layout = ({ children, pageInfo }) => (
             <Col className="footer-col">
               <footer>
                 <span>
-                  <Link to="https://twitter.com/hootinm" className="link-no-style">
+                  <Link target="_blank" to="https://twitter.com/hootinm" className="link-no-style">
                     <FontAwesomeIcon icon={faTwitter} size="2x" className="icon" />
                   </Link>
-                  <Link to="https://www.facebook.com/hootinMusic" className="link-no-style">
+                  <Link target="_blank" to="https://www.facebook.com/hootinMusic" className="link-no-style">
                     <FontAwesomeIcon icon={faFacebook} size="2x" className="icon" />
                   </Link>
-                  <Link to="https://www.instagram.com/hootinmusic/" className="link-no-style">
+                  <Link target="_blank" to="https://www.instagram.com/hootinmusic/" className="link-no-style">
                     <FontAwesomeIcon icon={faInstagram} size="2x" className="icon" />
+                  </Link>
+                  <Link target="_blank" to="https://www.tiktok.com/@nhoughton" className="link-no-style">
+                    <FontAwesomeIcon icon={faTiktok} size="2x" className="icon" />
+                  </Link>
+                  <Link target="_blank" to="https://www.youtube.com/channel/UClRvVkAi9QhJU2Y2-bpo3jQ" className=" link-no-style">
+                    <FontAwesomeIcon icon={faYoutube} size="2x" className="icon" />
                   </Link>
                 </span>
               </footer>
