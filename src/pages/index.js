@@ -6,6 +6,7 @@ import albumArt from "../images/ExitConditions_Art.jpeg"
 import styled from "styled-components";
 import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faItunes, faSpotify } from "@fortawesome/free-brands-svg-icons";
 
 const ImageWrapper = styled.div`
   width: 100%;
@@ -49,13 +50,44 @@ const ListItem = styled.li`
   margin: 6px 0;
 `;
 
+const HeaderList = styled.ul`
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 0;
+  li {
+    list-style-type: none;
+    margin: 0 10px;
+  }
+`;
+
+const HeaderLink = styled.a`
+  color: rgba(${props => props.color}, 0.8);
+  font-size: 1.5rem;
+
+  &:hover, &:active {
+    color: rgba(${props => props.color}, 1);
+  }
+`
+
 const IndexPage = () => (
   <Layout pageInfo={{ pageName: "Home" }}>
     <SEO title="Home" />
-
     <div>
-      <h1>Upcoming Album: <i>Exit Conditions</i></h1>
-      <h2>Release Date: <b>May 7th</b></h2>
+      <h1><i>Exit Conditions</i>: <b>AVAILABLE NOW!!</b></h1>
+      <HeaderList>
+        <li>
+          <HeaderLink color="29, 185, 84" href="#" aria-label="Link to album on Spotify">
+            <FontAwesomeIcon size="2x" icon={faSpotify} className="icon" />
+          </HeaderLink>
+        </li>
+        <li>
+          <HeaderLink color="234, 76, 192" href="#" aria-label="Link to album on iTunes">
+            <FontAwesomeIcon size="2x" icon={faItunes} className="icon" />
+          </HeaderLink>
+        </li>
+      </HeaderList>
     </div>
 
     <ImageWrapper>

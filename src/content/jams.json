@@ -3,12 +3,18 @@
         "name": "High Life",
         "src": "https://www.youtube.com/embed/57v5M5BdVG4",
         "enabled": true,
-        "sortOrder": 0
+        "sortOrder": 2
     },
     {
         "name": "Hold The Money",
         "src": "https://www.youtube.com/embed/qo0uM6a2JxU",
         "enabled": true,
         "sortOrder": 1
+    },
+    {
+        "name": "Drink You Down",
+        "src": "https://www.youtube.com/embed/h-DOb18qnoM",
+        "enabled": true,
+        "sortOrder": 0
     }
 ]
