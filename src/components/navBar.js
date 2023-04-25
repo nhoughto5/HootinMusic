@@ -22,6 +22,11 @@ const CustomNavbar = ({ pageInfo }) => {
               Video
             </Nav.Link>
           </Link>
+          <Link to="/streams" className="link-underline linkStyle">
+            <Nav.Link as="span" eventKey="streams">
+              Streams
+            </Nav.Link>
+          </Link>
           <Link to="/30MinuteJams" className="link-underline linkStyle">
             <Nav.Link as="span" eventKey="jams">
               30 Minute Jams

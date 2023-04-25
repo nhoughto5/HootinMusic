@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { Image } from "react-bootstrap";
-import may6 from "../images/newQueenAD.jpg"
+import banner from "../images/goodCatastrophe_AN.png"
 import styled from "styled-components";
 import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -83,10 +83,10 @@ const IndexPage = () => (
   <Layout pageInfo={{ pageName: "Home" }}>
     <SEO title="Home" />
     <div>
-      <h1><b>The New Queen - Out Now!</b></h1>
+      <h1><b><i>Good Catastrophe</i> - OUT NOW!</b></h1>
       <h5>
         Recently, I've been lucky enough to get to work with the good people at <PromoLink target="_blank" href="http://www.theanimalfarm.co.uk/" aria-label="Link to the Animal Farm">The Animal Farm</PromoLink>, putting together new ideas and strategies.
-        My second single <i>The New Queen</i> is out now!!!
+        My second single <i>The New Queen</i> is out now and my third (Small) is right around the corner!
       </h5>
       <hr />
       {/* <h2><i>Exit Conditions</i>: <b>AVAILABLE NOW!!</b></h2> */}
@@ -106,7 +106,7 @@ const IndexPage = () => (
 
       <ImageLink target="_blank" href="https://youtu.be/078GIeL75BE">
     <ImageWrapper>
-        <Image src={may6}></Image>
+        <Image src={banner}></Image>
     </ImageWrapper>
       </ImageLink>
 
@@ -149,6 +149,12 @@ const IndexPage = () => (
               <IconLink>
                 <FontAwesomeIcon icon={faArrowCircleRight} className="icon" />
                 On Magazine
+              </IconLink>
+            </PromoLink>
+            <PromoLink target="_blank" href="https://thephoenixremix.com/2022/09/09/playing-the-favourite-interview-hootin">
+              <IconLink>
+                <FontAwesomeIcon icon={faArrowCircleRight} className="icon" />
+                The Phoenix Remix
               </IconLink>
             </PromoLink>
           </ListItem>
