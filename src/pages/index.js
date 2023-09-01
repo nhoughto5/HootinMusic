@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { Image } from "react-bootstrap";
-import banner from "../images/goodCatastrophe_AN.png"
+import banner from "../images/aptitudeCS.png"
 import styled from "styled-components";
 import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -83,10 +83,10 @@ const IndexPage = () => (
   <Layout pageInfo={{ pageName: "Home" }}>
     <SEO title="Home" />
     <div>
-      <h1><b><i>Good Catastrophe</i> - OUT NOW!</b></h1>
+      <h1><b><i>Aptitude - Featuring Sandy Beach</i> - Sept 22nd!</b></h1>
+      {/* <h5>Recently, I've been lucky enough to get to work with the good people at <PromoLink target="_blank" href="http://www.theanimalfarm.co.uk/" aria-label="Link to the Animal Farm">The Animal Farm</PromoLink>, putting together new ideas and strategies.</h5> */}
       <h5>
-        Recently, I've been lucky enough to get to work with the good people at <PromoLink target="_blank" href="http://www.theanimalfarm.co.uk/" aria-label="Link to the Animal Farm">The Animal Farm</PromoLink>, putting together new ideas and strategies.
-        My second single <i>The New Queen</i> is out now and my third (Small) is right around the corner!
+        My fourth single <i>Aptitude</i> is coming out September 22nd! This one features my really good friend Sandy Beach who is an incredible rapper. Aptitude is about two toxic people in a relationship, accusing the other of being toxic.
       </h5>
       <hr />
       {/* <h2><i>Exit Conditions</i>: <b>AVAILABLE NOW!!</b></h2> */}
