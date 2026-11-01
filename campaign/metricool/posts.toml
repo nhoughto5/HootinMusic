@@ -32,14 +32,13 @@ time = "18:00"    # when posts go out, in the brand's time zone in Metricool
 brand = ""        # leave empty unless the Metricool account has more than one brand
 youtube_tags = "Hootin,new music,indie music"
 
-# The music videos in campaign/videos/, for the players in preview.py. The 9:16
-# versions are the same edit, so the clip times work on either. Point these at
-# the 9:16 files if you add them.
+# The 9:16 music videos the clips are cut from, relative to campaign/videos/.
+# The Horizontal/ versions are the same edit, with the same times.
 [videos]
-"Faster Than Slow" = "FasterThanSlow_Horizontal.mp4"
-"Old Glitch" = "Old_Glitch_Youtube.mp4"
-"Stay Deranged" = "StayDeranged_Youtube.mp4"
-"Seasons" = "Seasons_Horizontal.mp4"
+"Faster Than Slow" = "Vertical/FasterThanSlow_Vertical.mp4"
+"Old Glitch" = "Vertical/Old_Glitch_Insta.mp4"
+"Stay Deranged" = "Vertical/StayDeranged_Insta.mp4"
+"Seasons" = "Vertical/Seasons_Vertical.mp4"
 
 # Goes for every clip. The preview shows these at the top.
 [clips]

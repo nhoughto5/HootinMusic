@@ -67,5 +67,6 @@ The repo is **public**, and the artist chose (2026-11-01) to commit the campaign
   - `template.csv`: the header row of Metricool's import template. If Metricool changes its template, replace this file.
   - The generated `metricool-*.csv` files also go here.
 - `campaign/lyrics/`: the lyrics for all four songs, exactly as the artist wrote them.
-- `campaign/videos/`: the four finished music videos at 16:9 (1080p).
+- `campaign/videos/`: the four finished music videos, in `Horizontal/` (16:9) and `Vertical/` (9:16). They're the same edits, with identical lengths, so clip times work on both. Clips are cut from `Vertical/`.
+- **DaVinci Resolve Studio 21** is installed and the artist edits in it. External scripting works from here: set `RESOLVE_SCRIPT_API` and `RESOLVE_SCRIPT_LIB`, add `Modules` to the path, and call `scriptapp("Resolve")` while Resolve is running. The API docs are `DaVinciResolveScript.pyi` and `README.md` in `C:\ProgramData\Blackmagic Design\DaVinci Resolve\Support\Developer\Scripting\`. Never modify the artist's existing projects (FasterThanSlow, Old_Glitch, Stay_Deranged, Seasons and others). Work only in projects made for the campaign.
 - `.superpowers/brainstorm/`: mockups from planning. `roadmap-v2.html` is out of date in places. Where it disagrees with the plan, the plan wins.

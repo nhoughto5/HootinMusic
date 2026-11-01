@@ -165,7 +165,7 @@ About 3 feed posts a week. Each 9:16 post is cross-posted to Instagram Reels, Ti
 ## Inputs to gather before writing captions
 
 - ~~Lyrics for all four songs.~~ Done: in `lyrics/`.
-- ~~The video files.~~ Done: the 16:9 versions are in `videos/`. The artist cuts every clip, so the 9:16 files don't need to be here.
+- ~~The video files.~~ Done: `videos/Horizontal/` (16:9) and `videos/Vertical/` (9:16), with identical lengths.
 - ~~A short description of Old Glitch's characters.~~ Done: there are two, Lena and old Jack, as described in the lyrics.
 
 ## Still unknown

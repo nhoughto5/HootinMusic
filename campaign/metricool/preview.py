@@ -285,7 +285,7 @@ mark {{ background:var(--mark); color:inherit; border-radius:3px; padding:0 2px;
                border:1px dashed var(--line); display:inline-block; }}
 .parts.multi {{ display:grid; grid-template-columns:1fr 1fr; gap:4px 10px; }}
 .part p {{ margin:4px 0; font-size:14px; }}
-video {{ display:block; width:100%; max-height:300px; border-radius:8px; background:#000; }}
+video {{ display:block; width:auto; max-width:100%; max-height:340px; border-radius:8px; background:#000; }}
 .steps {{ padding-left:20px; margin:8px 0 0; }}
 .steps li {{ margin-bottom:4px; }}
 .caption {{ white-space:pre-wrap; border:1px solid var(--line); border-radius:8px; padding:8px 10px; font-size:14px; }}
@@ -353,8 +353,8 @@ class Handler(http.server.BaseHTTPRequestHandler):
         self.wfile.write(body)
 
     def send_video(self, name):
-        file = VIDEOS / name
-        if file.parent != VIDEOS or not file.is_file():
+        file = (VIDEOS / name).resolve()
+        if not file.is_relative_to(VIDEOS.resolve()) or not file.is_file():
             return self.send_error(404)
         size = file.stat().st_size
         start, end = 0, size - 1
