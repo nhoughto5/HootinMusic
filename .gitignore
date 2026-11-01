@@ -70,3 +70,9 @@ yarn-error.log
 
 
 tutorial.md
+
+# EP campaign: the music videos are over GitHub's 100 MB file limit,
+# and build_csv.py rebuilds the Metricool CSVs.
+campaign/videos/
+campaign/metricool/metricool-*.csv
+__pycache__/

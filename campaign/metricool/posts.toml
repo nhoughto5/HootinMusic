@@ -1,0 +1,529 @@
+# Hootin EP: every feed post, ready for Metricool.
+#
+# This is the only place feed captions live. Edit them here, then build the
+# import file:
+#     python campaign/metricool/build_csv.py
+# See it all, with the clip checklist, on a live page:
+#     python campaign/metricool/preview.py
+# The kickoff-day steps are in ../marketing-plan.md.
+#
+# Placeholders, in captions and titles:
+#   [EP TITLE]  the EP's title, from [release] below
+#   [DATE]      the release date, written like "Friday, March 5"
+#   [LINK]      "link in bio" on Instagram, TikTok and YouTube;
+#               the HyperFollow link itself on Facebook, where links are clickable
+#
+# Each post:
+#   day       Mon to Sun of that week. Release day (R) is a Friday.
+#   type      "video" (the default) or "image". Image posts skip YouTube.
+#   clip_url  the clip's Google Drive share link: shared as "Anyone with the
+#             link" with Editor access
+#   title     the YouTube title for videos (100 characters max), or the
+#             TikTok title for images (90 max)
+#   time      optional; overrides the default time in [release]
+#   clip      how to make the clip: which parts of which video, and the steps.
+#             Only the preview reads it.
+
+[release]
+date = ""         # the release Friday, written as 2027-03-05
+ep_title = ""
+link = ""         # the DistroKid HyperFollow link
+time = "18:00"    # when posts go out, in the brand's time zone in Metricool
+brand = ""        # leave empty unless the Metricool account has more than one brand
+youtube_tags = "Hootin,new music,indie music"
+
+# The music videos in campaign/videos/, for the players in preview.py. The 9:16
+# versions are the same edit, so the clip times work on either. Point these at
+# the 9:16 files if you add them.
+[videos]
+"Faster Than Slow" = "FasterThanSlow_Horizontal.mp4"
+"Old Glitch" = "Old_Glitch_Youtube.mp4"
+"Stay Deranged" = "StayDeranged_Youtube.mp4"
+"Seasons" = "Seasons_Horizontal.mp4"
+
+# Goes for every clip. The preview shows these at the top.
+[clips]
+every = [
+  "Cut from the 9:16 version of the video. The times here come from a rough transcription, so nudge each cut to land on a beat or the start of a line.",
+  "Export 1080×1920 MP4 (H.264), with AAC audio at 128 kbps or lower. Instagram rejects anything higher.",
+  "Keep text out of the bottom fifth of the frame and off the right edge, where Instagram and TikTok put the caption and buttons.",
+  "Lyric captions mean the sung words on screen as they're sung. Most people scroll with the sound off.",
+  "No dates, EP title or links on screen unless they're settled when you make the clip. The captions carry those.",
+  "Name each file after its post, like “R-4 Wed.mp4”, so it's easy to match up.",
+]
+
+
+# ---------------------------------------------------------------- R-5
+[[week]]
+week = -5
+focus = "The story"
+hashtags = "#newmusic #indieartist #comingsoon"
+
+[[week.post]]
+day = "Mon"
+name = "The story"
+clip_url = ""
+title = "Four new songs, finally finished | Hootin"
+caption = """
+Before my daughter was born, I was finishing four songs. The plan was to put them out when she arrived.
+
+She had other plans and showed up six weeks early. The songs sat unfinished while life got very full.
+
+They're finally done. [EP TITLE], four new songs, out [DATE].
+
+Pre-save: [LINK]
+"""
+
+[week.post.clip]
+parts = [{ video = "Faster Than Slow", start = "0:00", end = "0:24" }]
+steps = [
+  "The sunrise fades up from black over the first “It's been a little bit dark” lines. Keep the fade: it's the story in one shot.",
+  "Text, 0–8s: “I was finishing four songs before my daughter was born.”",
+  "Text, 8–16s: “She showed up six weeks early. The songs waited.”",
+  "Text, 16–24s: “They're finally done. 4 new songs, coming soon.”",
+  "No lyric captions on this one. The story text is the point.",
+]
+
+[[week.post]]
+day = "Wed"
+name = "Teaser"
+clip_url = ""
+title = "Four songs. One release. [DATE] | Hootin"
+caption = """
+Four songs. One release. [DATE].
+
+A sunrise. A bar on a space station. A quiet song that turns into a rock anthem. A drive out of a hard season.
+
+Pre-save: [LINK]
+"""
+
+[week.post.clip]
+parts = [
+  { video = "Faster Than Slow", start = "1:16", end = "1:23" },
+  { video = "Old Glitch", start = "0:49", end = "0:56" },
+  { video = "Stay Deranged", start = "3:28", end = "3:35" },
+  { video = "Seasons", start = "1:25", end = "1:32" },
+]
+steps = [
+  "Join the four parts in this order, with a hard cut on the beat between each.",
+  "Each song's title on screen for its part: Faster Than Slow, Old Glitch, Stay Deranged, Seasons.",
+  "End card, 2 seconds: “4 new songs. Coming soon.” Add the EP title if it's settled.",
+  "This teaser is used four times with a different end card each time: here, R-1 Fri, R Fri and R+1 Tue. Edit it once and export four versions.",
+]
+
+[[week.post]]
+day = "Fri"
+name = "How to help"
+clip_url = ""
+title = "How to pre-save the new Hootin songs"
+caption = """
+If you've ever wanted to help a small artist, pre-saving is the easiest way. It takes about ten seconds.
+
+Open the pre-save link, pick the app you listen on, and the songs show up in your library on [DATE]. That's it, and it genuinely helps.
+
+Pre-save: [LINK]
+"""
+
+[week.post.clip]
+parts = [{ video = "Old Glitch", start = "1:49", end = "2:08" }]
+steps = [
+  "The “automatic” section (“Our machines will serve you”), with the bar shots. It suits a how-to.",
+  "Text, 0–6s: “Pre-saving takes 10 seconds.”",
+  "Text, 6–13s: “Tap the link. Pick the app you listen on.”",
+  "Text, 13–19s: “The songs land in your library on release day.”",
+]
+
+
+# ---------------------------------------------------------------- R-4
+[[week]]
+week = -4
+focus = "Faster Than Slow"
+hashtags = "#newmusic #synthwave #indiemusic #newdad"
+
+[[week.post]]
+day = "Mon"
+name = "Faster Than Slow"
+clip_url = ""
+title = "Faster Than Slow | Hootin, out [DATE]"
+caption = """
+It's been a little bit dark. It needs sunrise.
+
+Faster Than Slow is the song I wrote while we were waiting for our daughter. It's about the life I'd been living, the one I could see coming, and realizing I wasn't afraid of it.
+
+Out [DATE].
+"""
+
+[week.post.clip]
+parts = [{ video = "Faster Than Slow", start = "0:55", end = "1:17" }]
+steps = [
+  "The title line, into the first chorus. It's the “wasn't afraid of it” moment the caption describes.",
+  "Title card, first 2 seconds: “Faster Than Slow”.",
+  "Lyric captions: “I felt it grow / Faster than slow / All said and done / I wasn't running”.",
+  "End on the first beat of the chorus, so it leaves people wanting the rest.",
+]
+
+[[week.post]]
+day = "Wed"
+name = "Little hands over sound"
+clip_url = ""
+title = "Faster Than Slow: little hands over sound | Hootin"
+caption = """
+"Your world turned around / Little hands over sound"
+
+I wrote that line before I knew what it actually felt like. Now I do.
+"""
+
+[week.post.clip]
+parts = [{ video = "Faster Than Slow", start = "2:05", end = "2:26" }]
+steps = [
+  "Lyric captions: “It needs sunrise / Your world turned around / Little hands over sound / Anchored, tethered”.",
+  "Hold “Little hands over sound” on screen a beat longer than the other lines.",
+]
+
+[[week.post]]
+day = "Fri"
+name = "Cue the sunrise"
+clip_url = ""
+title = "Cue the sunrise | Faster Than Slow by Hootin"
+caption = """
+Cue the sunrise. It's almost time.
+
+Faster Than Slow and three more songs, [DATE]. Pre-save: [LINK]
+"""
+
+[week.post.clip]
+parts = [{ video = "Faster Than Slow", start = "2:55", end = "3:16" }]
+steps = [
+  "“I wasn't running” into the second chorus, ending on “It's time”.",
+  "Lyric captions: “Cue the sunrise… It's almost time… It's time”.",
+  "End card, last 2 seconds: “Faster Than Slow + 3 more songs. Pre-save now.”",
+]
+
+
+# ---------------------------------------------------------------- R-3
+[[week]]
+week = -3
+focus = "Old Glitch"
+hashtags = "#newmusic #altdisco #indiedisco #synthpop"
+
+[[week.post]]
+day = "Mon"
+name = "Come on in"
+clip_url = ""
+title = "Old Glitch: come on in | Hootin"
+caption = """
+Come on in.
+
+Old Glitch is set in a bar on a space station, down where the misfits meet. Neon lights, machines pouring the drinks, and two people carrying more than they let on.
+
+You'll meet them this week.
+"""
+
+[week.post.clip]
+parts = [{ video = "Old Glitch", start = "0:00", end = "0:28" }]
+steps = [
+  "The intro: Earth, the space station at about 0:08, then into the bar. Keep that order. It sets the scene.",
+  "Text over the opening shots: “Come on in.”",
+  "Text over the bar shots: “Old Glitch. A bar on a space station.”",
+  "If the first few seconds feel slow, start at 0:04.",
+]
+
+[[week.post]]
+day = "Wed"
+name = "Lena"
+clip_url = ""
+title = "Old Glitch: this is Lena | Hootin"
+caption = """
+This is Lena.
+
+She's in the corner with a hologram past, dancing for bytes she knows won't last. When she's alone, she's a singer with a voice so sweet.
+
+Old Glitch, out [DATE].
+"""
+
+[week.post.clip]
+parts = [{ video = "Old Glitch", start = "0:30", end = "0:52" }]
+steps = [
+  "The first verse, ending on the first “Come on in”. The curly-haired woman in pink light lands right on Lena's line, at about 0:40.",
+  "Text, first 2 seconds: “This is Lena.”",
+  "Lyric captions, especially “Lena's in the corner with a hologram past / Dancing for bytes that she knows won't last”.",
+]
+
+[[week.post]]
+day = "Fri"
+name = "Old Jack"
+clip_url = ""
+title = "Old Glitch: old Jack | Hootin"
+caption = """
+And that's old Jack, the one with the cybernetic arm, trying to work his charm.
+
+He lost his wife when her ship went down. Now he fills his glass with electric blue so he won't come to.
+
+Two people in one bar, neither knowing the other is going through it too. Old Glitch, [DATE]. Pre-save: [LINK]
+"""
+
+[week.post.clip]
+parts = [{ video = "Old Glitch", start = "1:08", end = "1:30" }]
+steps = [
+  "Jack's verse, from “See right there with the cybernetic arm” to “a voice so sweet”.",
+  "Text, first 2 seconds: “And that's old Jack.”",
+  "Lyric captions for the whole verse.",
+  "Optional: the gold cybernetic hand is at about 0:24 in the video. Cut it in for a second on “cybernetic arm”.",
+]
+
+
+# ---------------------------------------------------------------- R-2
+[[week]]
+week = -2
+focus = "Stay Deranged"
+hashtags = "#newmusic #acoustic #indierock #singersongwriter"
+
+[[week.post]]
+day = "Mon"
+name = "Starts quiet"
+clip_url = ""
+title = "Stay Deranged starts quiet | Hootin"
+caption = """
+Oh this world is cold for some.
+
+Stay Deranged starts quiet. It doesn't stay that way.
+
+Out [DATE].
+"""
+
+[week.post.clip]
+parts = [
+  { video = "Stay Deranged", start = "0:20", end = "0:40" },
+  { video = "Stay Deranged", start = "3:28", end = "3:33" },
+]
+steps = [
+  "Start just before “Oh this world is cold for some”, at about 0:22. The young man in the chair facing the empty house comes up around 0:28.",
+  "Lyric captions on the quiet part, plus the text “Stay Deranged starts quiet.”",
+  "Hard cut to the big ending (part 2), with the text “It doesn't stay that way.”",
+  "Stop there, mid-noise. Don't fade out.",
+]
+
+[[week.post]]
+day = "Wed"
+name = "About the song"
+clip_url = ""
+title = "Stay Deranged: please don't tell me it's ok | Hootin"
+caption = """
+Stay Deranged is about someone who's been pushed to the edges, trying to make peace with how hard it is for people living comfortably to really understand that.
+
+"Please don't tell me it's ok."
+"""
+
+[week.post.clip]
+parts = [{ video = "Stay Deranged", start = "0:34", end = "0:54" }]
+steps = [
+  "Lyric captions: “Please don't tell me it's ok / Or there's nothing wrong with being that way”.",
+  "End just as the song lifts, at about 0:54.",
+]
+
+[[week.post]]
+day = "Fri"
+name = "Big ending"
+clip_url = ""
+title = "Maybe I should stay deranged | Hootin"
+caption = """
+Honestly, I might change if this world weren't so strange. Maybe I should stay deranged.
+
+[DATE]. Pre-save: [LINK]
+"""
+
+[week.post.clip]
+parts = [{ video = "Stay Deranged", start = "3:16", end = "3:44" }]
+steps = [
+  "“What a state I'm in” at about 3:21, then the big ending hits at about 3:28.",
+  "Text over the ending, one line at a time: “Honestly, I might change / If this world weren't so strange / Maybe I should stay deranged”.",
+  "End card, last 2 seconds: “Pre-save now.”",
+]
+
+
+# ---------------------------------------------------------------- R-1
+[[week]]
+week = -1
+focus = "Seasons"
+hashtags = "#newmusic #indiemusic #singersongwriter"
+
+[[week.post]]
+day = "Mon"
+name = "Seasons"
+clip_url = ""
+title = "Seasons | Hootin, out [DATE]"
+caption = """
+Seasons is about the strange guilt of feeling better: moving on from something hard and feeling like you're leaving part of it behind.
+
+"I'm burning up with all this hope that's new."
+
+Out [DATE].
+"""
+
+[week.post.clip]
+parts = [{ video = "Seasons", start = "2:32", end = "2:53" }]
+steps = [
+  "The second chorus. It has the woman with her arm out of the car window in the wind. Keep those shots in.",
+  "Title card, first 2 seconds: “Seasons”.",
+  "Lyric captions: “And I'm burning up with all this hope that's new” through “I have promised to”.",
+]
+
+[[week.post]]
+day = "Wed"
+name = "Finally finishing these"
+clip_url = ""
+title = "Finally finishing these songs | Hootin"
+caption = """
+These four songs took longer than anything I've made. Some of that was life, and the best part of life showed up early.
+
+Finishing them now feels like closing one season and starting the next.
+
+"It's not perfect but honest. It's not loud but steady."
+"""
+
+[week.post.clip]
+parts = [{ video = "Seasons", start = "3:08", end = "3:31" }]
+steps = [
+  "The bridge: the prisoner with his letter and the woman on the mountain road.",
+  "Lyric captions: “It's not perfect but honest / It's not loud but steady / When it speaks, I speak / … I can trust again”.",
+  "No other text. Let the words carry it.",
+]
+
+[[week.post]]
+day = "Fri"
+name = "One week"
+clip_url = ""
+title = "One week | [EP TITLE] by Hootin"
+caption = """
+One week.
+
+Four new songs, [DATE]. If you haven't pre-saved yet, there's still time: [LINK]
+"""
+
+[week.post.clip]
+parts = [
+  { video = "Faster Than Slow", start = "1:16", end = "1:23" },
+  { video = "Old Glitch", start = "0:49", end = "0:56" },
+  { video = "Stay Deranged", start = "3:28", end = "3:35" },
+  { video = "Seasons", start = "1:25", end = "1:32" },
+]
+steps = [
+  "The teaser from R-5 Wed, with the end card changed to “One week.”",
+]
+
+
+# ---------------------------------------------------------------- R (release week)
+[[week]]
+week = 0
+focus = "Release week"
+hashtags = ""
+
+[[week.post]]
+day = "Mon"
+name = "This Friday"
+clip_url = ""
+title = "This Friday | [EP TITLE] by Hootin"
+caption = """
+This Friday. Four new songs, everywhere you listen.
+"""
+
+[week.post.clip]
+parts = [{ video = "Faster Than Slow", start = "4:43", end = "4:59" }]
+steps = [
+  "The last chorus, ending on “It's time”.",
+  "Text for the whole clip: “This Friday.” with “4 new songs” under it.",
+]
+
+[[week.post]]
+day = "Thu"
+name = "Tomorrow"
+clip_url = ""
+title = "Tomorrow | [EP TITLE] by Hootin"
+caption = """
+Tomorrow.
+
+Thank you to everyone who's pre-saved, shared, or just watched these clips. It means more than you'd think.
+"""
+
+[week.post.clip]
+parts = [{ video = "Seasons", start = "3:31", end = "3:50" }]
+steps = [
+  "The final chorus. The car drives out of a tunnel into daylight at about 3:44. Keep it in.",
+  "Text: “Tomorrow.” Lyric captions are optional.",
+]
+
+[[week.post]]
+day = "Fri"
+name = "Out now"
+clip_url = ""
+time = "09:00"
+title = "[EP TITLE] by Hootin is out now"
+caption = """
+[EP TITLE] is out now. Four songs, four videos.
+
+Spotify, Apple Music, YouTube, wherever you listen: [LINK]
+
+If one of them sticks with you, tell me which.
+"""
+
+[week.post.clip]
+parts = [
+  { video = "Faster Than Slow", start = "1:16", end = "1:23" },
+  { video = "Old Glitch", start = "0:49", end = "0:56" },
+  { video = "Stay Deranged", start = "3:28", end = "3:35" },
+  { video = "Seasons", start = "1:25", end = "1:32" },
+]
+steps = [
+  "The teaser from R-5 Wed, with “Out now” on screen for the first 2 seconds as well as on the end card.",
+  "Add the EP title to the end card.",
+]
+
+
+# ---------------------------------------------------------------- R+1 (wrap-up)
+[[week]]
+week = 1
+focus = "Wrap-up"
+hashtags = ""
+
+[[week.post]]
+day = "Tue"
+name = "Your favorite"
+clip_url = ""
+title = "Which one's your favorite? | [EP TITLE] by Hootin"
+caption = """
+It's been a few days, so I have to ask: which one's your favorite?
+
+Faster Than Slow, Old Glitch, Stay Deranged or Seasons. Tell me in the comments.
+"""
+
+[week.post.clip]
+parts = [
+  { video = "Faster Than Slow", start = "1:16", end = "1:23" },
+  { video = "Old Glitch", start = "0:49", end = "0:56" },
+  { video = "Stay Deranged", start = "3:28", end = "3:35" },
+  { video = "Seasons", start = "1:25", end = "1:32" },
+]
+steps = [
+  "The teaser from R-5 Wed, with the songs numbered on screen: 1 Faster Than Slow, 2 Old Glitch, 3 Stay Deranged, 4 Seasons.",
+  "End card: “Which one's yours? Comment the number.”",
+]
+
+[[week.post]]
+day = "Fri"
+name = "Thank you"
+type = "image"
+clip_url = ""
+title = "Thank you | [EP TITLE] by Hootin"
+caption = """
+Thank you, seriously. For listening, sharing, pre-saving, and all the messages.
+
+These songs waited a long time to get out into the world, and you made it worth it.
+
+[EP TITLE], out everywhere: [LINK]
+"""
+
+[week.post.clip]
+steps = [
+  "The cover art as a still image, exported at 1080×1350 (4:5) so it fills the Instagram feed.",
+  "Optional: a small “Thank you” in one corner. Or post the cover art as it is.",
+]
