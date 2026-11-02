@@ -66,7 +66,7 @@ Everything for the campaign apart from the feed posts, week by week: what you do
 
 ## R+1 · Wrap-up
 
-**Scheduled:** Tue *Your favorite* · Fri *Thank you* (cover art)
+**Scheduled:** Tue *Your favorite* · Fri *Thank you* (you, to camera)
 **DM #3, sent by hand mid-week.**
 **Optional Stories:** reshare friends' posts and messages about the songs (with their OK).
 
@@ -138,6 +138,8 @@ Every post's clip instructions are in `posts.toml`, and the checklist is the pre
     python campaign/metricool/preview.py
 
 Make a clip, upload it to Google Drive (shared as "Anyone with the link", Editor), and send Claude the link. When the card turns green, it's ready.
+
+Posts marked ● in the calendar need something you record: a phone video, a voice-over or a demo. Each card says what to record and what to say, and the page's "For anything you record yourself" box covers how.
 
 - Export every clip with audio at **128 kbps or lower**, because Instagram rejects anything higher.
 - A post that uses the cover art needs `type = "image"` in `posts.toml`. Image posts go to Instagram, TikTok (as a photo) and Facebook, but not YouTube.

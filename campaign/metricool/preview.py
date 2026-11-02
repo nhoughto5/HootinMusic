@@ -107,8 +107,12 @@ def render_clip(post, videos):
         parts.append(f'<div class="part"><p><b>{html.escape(name)}</b> '
                      f'{html.escape(str(start))}–{html.escape(str(end))}{length}</p>{player}</div>')
 
+    record = clip.get("record", "")
+    say = "".join(f"<li>{html.escape(line)}</li>" for line in clip.get("say", []))
     steps = "".join(f"<li>{html.escape(step)}</li>" for step in clip.get("steps", []))
-    body = (f'<div class="parts{" multi" if len(parts) > 1 else ""}">{"".join(parts)}</div>'
+    body = ((f'<p class="record">You record: {html.escape(record)}</p>' if record else "")
+            + (f'<div class="say"><h4>What to say</h4><ul>{say}</ul></div>' if say else "")
+            + f'<div class="parts{" multi" if len(parts) > 1 else ""}">{"".join(parts)}</div>'
             + (f'<ol class="steps">{steps}</ol>' if steps else ""))
     if not clip:
         body = '<p class="muted">No clip instructions yet.</p>'
@@ -186,8 +190,9 @@ def render_page():
     for index, (week, post) in enumerate(pairs):
         label, when, card = render_post(index, week, post, release, date, videos)
         cards.append((week, card))
+        recorded = " rec" if post.get("clip", {}).get("record") else ""
         cells.setdefault((week["week"], post.get("day")), []).append(
-            f'<a class="chip" href="#p{index}" data-card="p{index}">{html.escape(post.get("name", "?"))}</a>')
+            f'<a class="chip{recorded}" href="#p{index}" data-card="p{index}">{html.escape(post.get("name", "?"))}</a>')
 
     header_cells = "".join(f"<th>{d}</th>" for d in DAYS)
     rows = []
@@ -212,8 +217,11 @@ def render_page():
                             f'{html.escape(week.get("focus", ""))}{tags}</h2>')
         sections.append(card)
 
-    every = "".join(f"<li>{html.escape(rule)}</li>" for rule in data.get("clips", {}).get("every", []))
-    guide = f'<details class="guide" open><summary>For every clip</summary><ul>{every}</ul></details>' if every else ""
+    guide = ""
+    for key, summary in [("every", "For every clip"), ("recording", "For anything you record yourself (● in the calendar)")]:
+        rules = "".join(f"<li>{html.escape(rule)}</li>" for rule in data.get("clips", {}).get(key, []))
+        if rules:
+            guide += f'<details class="guide" open><summary>{summary}</summary><ul>{rules}</ul></details>'
     kickoff = "".join(f"<li>{html.escape(e.removeprefix('[release] '))}</li>" for e in release_errors)
     summary = f"""
 <div class="summary">
@@ -264,6 +272,7 @@ mark {{ background:var(--mark); color:inherit; border-radius:3px; padding:0 2px;
 .date {{ display:block; font-size:11px; }}
 .chip {{ display:block; margin-top:4px; padding:3px 6px; border-radius:6px; text-decoration:none; color:#fff;
          background:var(--todo); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }}
+.chip.rec::before {{ content:"● "; color:#ffa8a8; }}
 .card {{ background:var(--card); border:1px solid var(--line); border-left:5px solid var(--todo);
          border-radius:10px; padding:14px 16px; margin-bottom:14px; }}
 .card header {{ display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px; margin-bottom:10px; }}
@@ -283,6 +292,9 @@ mark {{ background:var(--mark); color:inherit; border-radius:3px; padding:0 2px;
           background:var(--line); }}
 .thumb.none {{ width:auto; padding:8px 10px; color:var(--muted); font-size:13px; background:transparent;
                border:1px dashed var(--line); display:inline-block; }}
+.record {{ margin:0 0 8px; font-weight:600; font-size:14px; }}
+.say {{ border-left:3px solid var(--accent); padding:2px 0 2px 12px; margin:0 0 10px; font-size:14px; }}
+.say ul {{ margin:0; padding-left:18px; }}
 .parts.multi {{ display:grid; grid-template-columns:1fr 1fr; gap:4px 10px; }}
 .part p {{ margin:4px 0; font-size:14px; }}
 video {{ display:block; width:auto; max-width:100%; max-height:340px; border-radius:8px; background:#000; }}

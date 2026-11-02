@@ -22,7 +22,10 @@
 #             TikTok title for images (90 max)
 #   time      optional; overrides the default time in [release]
 #   clip      how to make the clip: which parts of which video, and the steps.
-#             Only the preview reads it.
+#             Only the preview reads it. Some clips also have:
+#               record  what you record yourself for it: a phone video, a
+#                       voice-over or a demo
+#               say     what to say in that recording
 
 [release]
 date = ""         # the release Friday, written as 2027-03-05
@@ -50,6 +53,17 @@ every = [
   "No dates, EP title or links on screen unless they're settled when you make the clip. The captions carry those.",
   "Name each file after its post, like “R-4 Wed.mp4”, so it's easy to match up.",
 ]
+# Goes for the posts with a `record`: phone videos, voice-overs and demos.
+recording = [
+  "Record them all in one sitting. It's about an evening's work.",
+  "Phone videos: vertical, on the phone's main (back) camera, propped at eye level. Face a window for light, in a quiet room with fans and music off.",
+  "Check the background before you film: no photos of your daughter, and nothing with her name on it.",
+  "Read the “What to say” points, then say them in your own words. Don't read them out. Do two or three takes and keep the most natural one.",
+  "Start talking straight away, with no “hi” or “so”. The first second decides whether people keep watching.",
+  "Voice-overs: your studio mic, or a phone voice memo held close, in a quiet room. Leave a second of silence before and after.",
+  "Your own voice only, never text-to-speech.",
+  "Put the files in campaign/videos/Recorded/, named after the post, like “R-5 Mon.mov” or “R-4 Wed voice.wav”. Claude cuts them in and times captions to what you say.",
+]
 
 
 # ---------------------------------------------------------------- R-5
@@ -74,13 +88,18 @@ Pre-save: [LINK]
 """
 
 [week.post.clip]
-parts = [{ video = "Faster Than Slow", start = "0:00", end = "0:24" }]
+record = "Phone video of you, talking to the camera"
+say = [
+  "These four songs were supposed to come out over a year ago.",
+  "I was finishing them while we were waiting for my daughter. The plan was to put them out when she arrived.",
+  "She had other plans, and showed up six weeks early. The songs sat unfinished while life got very full.",
+  "They're finally done. Four new songs, coming soon, and I'd love for you to hear them.",
+]
+parts = [{ video = "Faster Than Slow", start = "0:04", end = "0:10" }]
 steps = [
-  "The sunrise fades up from black over the first “It's been a little bit dark” lines. Keep the fade: it's the story in one shot.",
-  "Text, 0–8s: “I was finishing four songs before my daughter was born.”",
-  "Text, 8–16s: “She showed up six weeks early. The songs waited.”",
-  "Text, 16–24s: “They're finally done. 4 new songs, coming soon.”",
-  "No lyric captions on this one. The story text is the point.",
+  "You, telling the story, 30–45 seconds. Captions on screen of what you say.",
+  "Then cut to the sunrise (part 1) for the last few seconds and let the song come in, with the text “4 new songs. Coming soon.”",
+  "If you'd rather not be on camera: record the same lines as a voice-over over Faster Than Slow 0:00–0:24, with the song turned down underneath.",
 ]
 
 [[week.post]]
@@ -124,12 +143,17 @@ Pre-save: [LINK]
 """
 
 [week.post.clip]
+record = "Voice-over"
+say = [
+  "If you've ever wanted to help a small artist, pre-saving is the easiest way.",
+  "Tap the link, pick the app you listen on, and the songs land in your library on release day.",
+  "That's it. It takes ten seconds.",
+]
 parts = [{ video = "Old Glitch", start = "1:49", end = "2:08" }]
 steps = [
   "The “automatic” section (“Our machines will serve you”), with the bar shots. It suits a how-to.",
-  "Text, 0–6s: “Pre-saving takes 10 seconds.”",
-  "Text, 6–13s: “Tap the link. Pick the app you listen on.”",
-  "Text, 13–19s: “The songs land in your library on release day.”",
+  "Your voice over the clip, with the song turned down underneath. Bring the song back up once you've finished.",
+  "Captions on screen of what you say.",
 ]
 
 
@@ -173,9 +197,13 @@ I wrote that line before I knew what it actually felt like. Now I do.
 """
 
 [week.post.clip]
+record = "Voice-over"
+say = ["I wrote this line before my daughter was born. Now I know what it means."]
 parts = [{ video = "Faster Than Slow", start = "2:05", end = "2:26" }]
 steps = [
-  "Lyric captions: “It needs sunrise / Your world turned around / Little hands over sound / Anchored, tethered”.",
+  "Your voice over the first 5 seconds, with the song turned down underneath. Captions on screen of what you say.",
+  "Bring the song back up for “Your world turned around”, about 5 seconds in. If the voice-over needs more room, start at 2:03.",
+  "Then lyric captions: “Your world turned around / Little hands over sound / Anchored, tethered”.",
   "Hold “Little hands over sound” on screen a beat longer than the other lines.",
 ]
 
@@ -241,11 +269,13 @@ Old Glitch, out [DATE].
 """
 
 [week.post.clip]
+record = "Voice-over"
+say = ["This is Lena. Nobody in this bar knows what she's carrying."]
 parts = [{ video = "Old Glitch", start = "0:30", end = "0:52" }]
 steps = [
   "The first verse, ending on the first “Come on in”. The curly-haired woman in pink light lands right on Lena's line, at about 0:40.",
-  "Text, first 2 seconds: “This is Lena.”",
-  "Lyric captions, especially “Lena's in the corner with a hologram past / Dancing for bytes that she knows won't last”.",
+  "Your voice over the opening line, with the song turned down underneath. Captions on screen of what you say.",
+  "Song back up by “There's a bar down here”, at about 0:35. Then lyric captions, especially “Lena's in the corner with a hologram past / Dancing for bytes that she knows won't last”.",
 ]
 
 [[week.post]]
@@ -262,11 +292,13 @@ Two people in one bar, neither knowing the other is going through it too. Old Gl
 """
 
 [week.post.clip]
-parts = [{ video = "Old Glitch", start = "1:08", end = "1:30" }]
+record = "Voice-over"
+say = ["And this is old Jack. Same bar, and he's going through it too."]
+parts = [{ video = "Old Glitch", start = "1:03", end = "1:30" }]
 steps = [
-  "Jack's verse, from “See right there with the cybernetic arm” to “a voice so sweet”.",
-  "Text, first 2 seconds: “And that's old Jack.”",
-  "Lyric captions for the whole verse.",
+  "Jack's verse, from “See right there with the cybernetic arm” to “a voice so sweet”. It starts 5 seconds early, in the “come on, hey” chant, to make room for the voice-over.",
+  "Your voice over those first 5 seconds, with the song turned down underneath. Captions on screen of what you say.",
+  "Song back up for “See right there with the cybernetic arm”, at about 1:09. Then lyric captions for the whole verse.",
   "Optional: the gold cybernetic hand is at about 0:24 in the video. Cut it in for a second on “cybernetic arm”.",
 ]
 
@@ -310,14 +342,20 @@ title = "Stay Deranged: please don't tell me it's ok | Hootin"
 caption = """
 Stay Deranged is about someone who's been pushed to the edges, trying to make peace with how hard it is for people living comfortably to really understand that.
 
+Here's how it starts, stripped right back.
+
 "Please don't tell me it's ok."
 """
 
 [week.post.clip]
+record = "Phone video of you playing the opening"
 parts = [{ video = "Stay Deranged", start = "0:34", end = "0:54" }]
 steps = [
-  "Lyric captions: “Please don't tell me it's ok / Or there's nothing wrong with being that way”.",
-  "End just as the song lifts, at about 0:54.",
+  "Play and sing “Please don't tell me it's ok / Or there's nothing wrong with being that way”, on whatever the song opens with. 20–30 seconds. Part 1 is how it goes on the record.",
+  "One take from a fixed spot, framed from the chest up with your hands and the instrument in shot. The phone's own sound is fine. A quiet room matters more than the mic.",
+  "Lyric captions as you sing.",
+  "End card, last 2 seconds: “Stay Deranged”.",
+  "If you'd rather not: use part 1 from the video with the same lyric captions, ending just as the song lifts.",
 ]
 
 [[week.post]]
@@ -375,17 +413,20 @@ title = "Finally finishing these songs | Hootin"
 caption = """
 These four songs took longer than anything I've made. Some of that was life, and the best part of life showed up early.
 
-Finishing them now feels like closing one season and starting the next.
+Finishing them now feels like closing one season and starting the next. Here's an early version of one of them, and how it ended up.
 
 "It's not perfect but honest. It's not loud but steady."
 """
 
 [week.post.clip]
+record = "An early demo, as a screen recording of it playing"
 parts = [{ video = "Seasons", start = "3:08", end = "3:31" }]
 steps = [
-  "The bridge: the prisoner with his letter and the woman on the mountain road.",
-  "Lyric captions: “It's not perfect but honest / It's not loud but steady / When it speaks, I speak / … I can trust again”.",
-  "No other text. Let the words carry it.",
+  "Before: 5–10 seconds of an early demo or rough mix, ideally of the Seasons bridge. Screen-record the old session playing, or film the screen with your phone. Text: “Then”.",
+  "Check the screen shows nothing personal: file names, other windows, notifications.",
+  "Hard cut on the beat to the finished bridge (part 1): the prisoner with his letter and the woman on the mountain road. Text: “Now”.",
+  "Lyric captions on the finished part: “It's not perfect but honest / It's not loud but steady / When it speaks, I speak / … I can trust again”.",
+  "If your demo is of another song, cut to that song's finished version of the same part. If there's no demo, use part 1 on its own with the lyric captions.",
 ]
 
 [[week.post]]
@@ -510,7 +551,6 @@ steps = [
 [[week.post]]
 day = "Fri"
 name = "Thank you"
-type = "image"
 clip_url = ""
 title = "Thank you | [EP TITLE] by Hootin"
 caption = """
@@ -522,7 +562,14 @@ These songs waited a long time to get out into the world, and you made it worth 
 """
 
 [week.post.clip]
+record = "Phone video of you, talking to the camera"
+say = [
+  "Thank you, seriously, for listening, for sharing, and for all the messages.",
+  "These songs waited a long time to get out into the world, and you made it worth it.",
+]
 steps = [
-  "The cover art as a still image, exported at 1080×1350 (4:5) so it fills the Instagram feed.",
-  "Optional: a small “Thank you” in one corner. Or post the cover art as it is.",
+  "10–20 seconds, filmed in the same sitting as the story. Start on “Thank you”.",
+  "It's filmed weeks ahead, so keep it true whatever happens: no numbers, nothing about how release week went.",
+  "Captions on screen of what you say.",
+  "If the cover art is ready, end on it for 2 seconds.",
 ]

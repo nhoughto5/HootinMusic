@@ -56,6 +56,11 @@ That's the whole bar. Getting to 100 plays mostly means a few dozen people who c
 - **Front-load everything.** All posts written and all clips cut before kickoff, with the campaign as automated as possible. Some manual work is fine, such as posting Instagram Stories by hand.
 - **After release: "Option A".** All four videos come out on release day, followed by one wrap-up week. The other option, one video per week after release, was turned down.
 - **Clips: Claude suggests them, the artist makes them.** Each post in `metricool/posts.toml` has clip instructions: which video, start and end times, on-screen text and finishing touches. The artist edits each clip from the 9:16 version of the video (the same edit as the 16:9, so the times match), uploads it to Google Drive and sends Claude the link. Claude adds the link to `posts.toml`. `metricool/preview.py` shows every post with its instructions and whether its clip is ready. Canvas loops stay the artist's call. (Changed 2026-10-31: originally the artist was going to pick every clip alone.)
+- **Personal posts and voice-overs** (decided 2026-11-02). The people this campaign is for respond to the artist more than to polished footage, and twenty posts cut from the same four videos would start to feel like ads. So eight of the twenty posts use something the artist records:
+  - **Recorded instead of a clip:** the story told to camera (R−5 Mon), the opening of Stay Deranged played live (R−2 Wed), an early demo cut against the finished song (R−1 Wed), and a thank-you to camera (R+1 Fri, replacing the cover-art image).
+  - **A short voice-over on a clip:** How to help (R−5 Fri), Little hands over sound (R−4 Wed), Lena (R−3 Wed) and Old Jack (R−3 Fri). Each voice-over comes before the key lyric, never over it.
+  - The other twelve stay as clips with lyric captions. Every post keeps captions on screen, because many people watch with the sound off. Voice-overs use the artist's own voice, never text-to-speech.
+  - Each post's `clip` table in `posts.toml` says what to record and what to say, with a fallback if the artist would rather not. It's about an evening's recording. The files go in `videos/Recorded/`, and Claude cuts them in and times the captions to the speech.
 - **Accounts:** Instagram, Facebook and YouTube are Hootin accounts. TikTok is the artist's personal account.
 - **Personal messages go by DM only:** Facebook Messenger, Instagram or TikTok. No texts or emails. None of these apps can schedule messages, so the messages are written ahead and sent by hand.
 
@@ -84,6 +89,7 @@ Everything here gets finished before a date is picked:
 
 - [ ] Cut **2–3 vertical clips (15–30s)** from each of the four 9:16 videos. Export the audio at 128 kbps or lower, because Instagram rejects anything higher.
 - [ ] Cut **one teaser** that mixes all four songs.
+- [ ] Record the **personal pieces**, in about an evening: two short videos to camera, Stay Deranged's opening played live, an early demo, and four voice-overs. What to record and say is in `metricool/posts.toml`, and the preview marks those posts with ●. Put the files in `videos/Recorded/`.
 - [ ] Cut short looping **Spotify Canvas** clips (3–8s, vertical) from each video.
 - [ ] Upload every clip to **Google Drive**. Share each file as "Anyone with the link" with Editor access, which Metricool requires. Paste each share link into its post's `clip_url` in `metricool/posts.toml`. Keep the files there, shared, until the campaign ends.
 - [ ] Write **every post caption** for the whole campaign, with `[DATE]` and `[LINK]` placeholders. Done: they're in `metricool/posts.toml`.
@@ -110,11 +116,11 @@ About 3 feed posts a week. Each 9:16 post is cross-posted to Instagram Reels, Ti
 
 | Week | Focus | Scheduled | By hand |
 |---|---|---|---|
-| **R−5** | **The story.** "These songs were meant to arrive with my daughter. She came six weeks early." Announce the date. | Story post, four-song teaser, website post | **Personal message #1** (heads-up + pre-save link). Optional: Story with a pre-save link sticker |
+| **R−5** | **The story.** "These songs were meant to arrive with my daughter. She came six weeks early." Announce the date. | Story video (the artist, to camera), four-song teaser, website post | **Personal message #1** (heads-up + pre-save link). Optional: Story with a pre-save link sticker |
 | **R−4** | **Faster Than Slow.** The pregnancy, becoming a dad, and not running from it. It follows straight on from the story. | Clip, a note on what the song is about, second clip | **Required (about 20 min):** once the release shows in Spotify for Artists, pitch a song and upload the Canvas loops. Optional: Stories. |
 | **R−3** | **Old Glitch.** Electric alt-disco, set in a space station bar with two characters, Lena and old Jack, each dealing with tragedy alongside the other without either knowing. One post per character, opening on the "Come on in" hook. | Clip, character posts, second clip | Optional: Stories |
-| **R−2** | **Stay Deranged.** Lead with the hook: _"Honestly, I might change if this world weren't so strange, maybe I should stay deranged."_ It opens as an acoustic song and builds into a rock anthem. | Clip, a note on the song, second clip | Optional: Stories |
-| **R−1** | **Seasons.** The guilt of moving on from trauma into something more hopeful. It pairs with a reflective "finally finishing these" post. Countdown starts. | Clip, reflective post, countdown post | Optional: Story with a countdown sticker |
+| **R−2** | **Stay Deranged.** Lead with the hook: _"Honestly, I might change if this world weren't so strange, maybe I should stay deranged."_ It opens as an acoustic song and builds into a rock anthem. | Clip, the opening played live, second clip | Optional: Stories |
+| **R−1** | **Seasons.** The guilt of moving on from trauma into something more hopeful. It pairs with a reflective "finally finishing these" post. Countdown starts. | Clip, reflective post (an early demo against the finished song), countdown post | Optional: Story with a countdown sticker |
 
 ### Release week (R, Friday)
 
@@ -126,7 +132,7 @@ About 3 feed posts a week. Each 9:16 post is cross-posted to Instagram Reels, Ti
 
 ### Wrap-up week (R+1)
 
-- **Scheduled:** a thank-you post.
+- **Scheduled:** a thank-you video (the artist, to camera).
 - **By hand:** **personal message #3**, asking people what they thought.
 - **Optional:** reshare friends' reactions to Stories, and reply to comments.
 
@@ -151,7 +157,7 @@ About 3 feed posts a week. Each 9:16 post is cross-posted to Instagram Reels, Ti
 - **How much of the story to tell.** The artist hasn't set the limits, so this plan stays conservative. The story is "these were meant to arrive with my daughter; she came six weeks early; the songs sat unfinished until now." The artist's wife isn't named, tagged or shown, and the hospital stay isn't described. Loosen this if the artist wants. Before kickoff, check that none of the four videos shows the daughter.
 - **Spending:** Metricool free plan first. Boosts on release week, picked by hand.
 - **"Never her image"** means no photo of her at all, including partial shots (a hand, a foot), silhouettes and ultrasounds.
-- **Assets:** posts are built from the existing videos plus text overlays and captions. One optional addition: a 30–60 second phone video of the artist telling the story, for the R−5 post. It's the strongest single piece for a friends-and-family audience, but the campaign works without it.
+- **Assets:** most posts are built from the existing videos plus text overlays and lyric captions. Eight use something the artist records (see "Personal posts and voice-overs" above). The story video to camera is the strongest single piece for a friends-and-family audience.
 
 ## Left to whoever builds this out
 
